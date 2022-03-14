@@ -1,27 +1,41 @@
+<!DOCTYPE html>
 <html>
 <head>
 <title>Welcome to Scotbotics!</title>
 <link rel="stylesheet" href="styles.css"></link>
+<link rel="icon" href="images/robotlogo.png"></link>
 </head>
-<body>
+<body onscroll="checkNavBar()">
 <div id="navBar">
-	<div class="navItem">
-		<a href="/">Home</a>
-	</div>
-	<div class="navItem">
-		<a href="/">About</a>
-	</div>
-	<div class="navItem">
-		<a href="/">Our Robots</a>
-	</div>
-	<div class="navItem">
-		<a href="/">Apply</a>
+    <script src="scripts.js"></script>
+    <div class="navItem" style="max-height: 30px;">
+        <a href="/">
+            <img id="homeImage" src="images/robotlogo.png">
+        </a>
+    </div>
+    <div id="navLinks">
+        <div class="navItem">
+            <a href="/">About</a>
+        </div>
+        <div class="navItem">
+            <a href="/">Our Robots</a>
+        </div>
+        <div class="navItem">
+            <a href="/">Apply</a>
+        </div>
 	</div>
 </div>
-	<div style="background: url('scotbotics.jpg')" class="pageImage">
-	<h1>Welcome to Scotbotics!</h1>
+	<div style="background: url('images/scotbotics.jpg')" class="pageImage">
+	<div>
+	<img src="images/wordlogo.png" style="width: 25vw; padding-top: 50px;">
+	</div>
 	</div>
 	<h2>Who we are</h2>
-	<p>Scotbotics is a FIRST Tech Challenge robotics team based in Piedmont, CA. We were founded in 2009, making us the oldest team in Piedmont, and in the 2021-2022 season we were the 5th oldest team in Northern California.</p>
+	<p>We are a competitive robotics team run by high school students based in Piedmont, California. Together, we focus on working as a team to build a robot in addition to having a good high school experience. We were founded in 2009, making us the oldest team in Piedmont, and in the 2021-2022 season we were the 5th oldest team in Northern California.</p>
+	<button class="gotobutton">Learn More</button>
+	
+	<h2>Interested in joining?</h2>
+	<p>The tradidtional recruiting season is at the beginning of the school year, but we are happy to accept new members any time of the year. If you're interested in having a great time building robots (as well as looking good for colleges), feel free to apply</p>
+	<button class="gotobutton">Apply Now</button>
 </body>
 </html>

@@ -7,12 +7,13 @@ body {
 
 #navBar {
 	display: flex;
-	justify-content: ;
+	justify-content: space-between;
 	color: black;
 	position: fixed;
 	width: 100vw;
 	color: #eee;
 	text-shadow: 1px 1px 2px rgba(0, 0, 0, .7);
+    transition-duration: .5s;
 }
 
 .navItem {
@@ -27,8 +28,14 @@ body {
 }
 
 .navItem:hover{
-	background: #999b;
+	background: #9998;
 	transition-duration: .5s;
+}
+
+#navLinks {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .pageImage {
@@ -38,7 +45,7 @@ body {
 	background-position-y: 30% !important;
 	display: flex;
 	justify-content: center;
-	align-content: center;
+	align-items: center;
 }
 
 .pageImage h1 {
@@ -46,4 +53,37 @@ body {
 	margin: auto;
 	text-shadow: 3px 3px 4px rgba(0, 0, 0, .5);
 	font-size: 32pt;
+}
+
+p {
+    max-width: 70vw;
+    margin: auto;
+}
+
+#homeImage {
+    height: 100px;
+}
+
+.gotobutton {
+    font-size: 16pt;
+    background: #ddd;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin: 10px;
+    transition-duration: .5s;
+}
+
+.gotobutton::after {
+    display: inline-block;
+    content: url("images/doublearrow.svg");
+    width: 15px;
+    padding: 5px;
+    padding-left: 15px;
+    background-size: contain;
+    transform: scale(1.4);
+}
+
+.gotobutton:hover {
+    background: #bbb;
 }
