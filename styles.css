@@ -14,6 +14,7 @@ body {
 	color: #eee;
 	text-shadow: 1px 1px 2px rgba(0, 0, 0, .7);
     transition-duration: .5s;
+    max-height: 53px;
 }
 
 .navItem {
@@ -36,6 +37,25 @@ body {
     width: 100%;
     display: flex;
     justify-content: flex-end;
+}
+
+.dropdown {
+    background: white;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, .5);
+    max-height: 0px;
+    overflow: hidden;
+    transition-duration: 1s;
+}
+
+.dropdownCont:hover .dropdown{
+    max-height:50vh;
+}
+
+.dropdown .navItem {
+    color: black;
+    text-shadow: none;
 }
 
 .pageImage {
@@ -61,7 +81,8 @@ p {
 }
 
 #homeImage {
-    height: 100px;
+    height: 60px;
+    transition-duration: .5s;
 }
 
 .gotobutton {
@@ -86,4 +107,17 @@ p {
 
 .gotobutton:hover {
     background: #bbb;
+}
+
+.imageCont {
+    background: #9a77aa;
+    color: white;
+    font-style: italic;
+    border-radius: 5px;
+    overflow: hidden;
+    width: fit-content;
+    margin: auto;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, .4);
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
