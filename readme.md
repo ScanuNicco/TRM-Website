@@ -1,7 +1,7 @@
-#The Scotbotics Website
+# The Scotbotics Website
 The newest and most up-to-date Scotbotics website. Compared to the old website, this one is better organized and has more consistent styling across the site
 
-#Styling Guide
+## Styling Guide
 * Consistent styles are key to having a good-looking website.
 * Use what's already there. Whenever possible, use existing classes and structures to style new content so that it appears in a style consistant with the existing pages
     + Find a page with the stying you want, then just copy it and change the text/images
@@ -14,7 +14,7 @@ The newest and most up-to-date Scotbotics website. Compared to the old website, 
 * Add new classes to `styles.css` so they can be used in multiple pages
     + Be sure to document how they should be used with comments!
 
-#Age-resitant text
+## Age-resitant text
 It's no secret that this website will likely not be updated as often as it should be. Being thoughtful about what you type can make older pages seem far less outdated
 * Avoid saying how old something is, as that requires updating every year
     + Instead of saying "Scotbotics is 13 years old", say "Scotbotics was founded in 2009"
@@ -24,7 +24,7 @@ It's no secret that this website will likely not be updated as often as it shoul
     + Say "in 2022" instead of "this year"
 * When possible, avoid future-tense
 
-#Updating the website
+## Updating the website
 Certain things on the website should be updated yearly. Each year, be sure to update...
 * The list of team members on `about/team.html`
 * The google form / email on `apply.html`
