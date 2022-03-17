@@ -14,7 +14,7 @@ The newest and most up-to-date Scotbotics website. Compared to the old website, 
 * Add new classes to `styles.css` so they can be used in multiple pages
     + Be sure to document how they should be used with comments!
 
-## Age-resitant text
+## Age-resistant text
 It's no secret that this website will likely not be updated as often as it should be. Being thoughtful about what you type can make older pages seem far less outdated
 * Avoid saying how old something is, as that requires updating every year
     + Instead of saying "Scotbotics is 13 years old", say "Scotbotics was founded in 2009"
@@ -31,5 +31,5 @@ Certain things on the website should be updated yearly. Each year, be sure to up
 * The image of the team on the home page
 * The waterfall on `about/history.html` (add the newest team image to the bottom)
 * Also, make a new page under Our Robots with the current year's robot
-   + I reccommend copying `robots/oppurtunity.html` and just changing the images and text.
+   + I recommend copying `robots/oppurtunity.html` and just changing the images and text.
    + If you want to add more than a few images, maybe consider copying `about/history.html` instead and using the waterfall structure.
