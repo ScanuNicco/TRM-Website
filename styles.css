@@ -3,6 +3,7 @@ body {
 	font-family: sans-serif;
 	padding: 0px;
 	margin: 0px;
+	overflow-x: hidden;
 }
 
 #navBar {
@@ -13,8 +14,8 @@ body {
 	width: 100vw;
 	color: #eee;
 	text-shadow: 1px 1px 1px rgba(0, 0, 0, .7), 2px 2px 3px rgba(0, 0, 0, .7), 4px 4px 10px rgba(0, 0, 0, .7);
-    transition-duration: .5s;
-    max-height: 53px;
+	transition-duration: .5s;
+	max-height: 53px;
 }
 
 .navItem {
@@ -23,42 +24,44 @@ body {
 	padding-left: 30px;
 }
 
-.navItem a, .navItem a:visited {
+.navItem a,
+.navItem a:visited {
 	text-decoration: none;
 	color: inherit;
 }
 
-.navItem:hover{
+.navItem:hover {
 	background: #9998;
 	transition-duration: .5s;
 }
 
 #navLinks {
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
+	width: 100%;
+	display: flex;
+	justify-content: flex-end;
 }
 
 .dropdown {
-    background: white;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    box-shadow: 0px 3px 3px rgba(0, 0, 0, .5);
-    max-height: 0px;
-    overflow: hidden;
-    transition-duration: 1s;
+	background: white;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	box-shadow: 0px 3px 3px rgba(0, 0, 0, .5);
+	max-height: 0px;
+	overflow: hidden;
+	transition-duration: 1s;
 }
 
-.dropdownCont:hover .dropdown{
-    max-height:50vh;
+.dropdownCont:hover .dropdown {
+	max-height: 50vh;
 }
 
 .dropdown .navItem {
-    color: black;
-    text-shadow: none;
+	color: black;
+	text-shadow: none;
 }
 
 .pageImage {
+	/* The div at the top of the page with the image */
 	width: 100vw;
 	height: 50vh;
 	background-size: cover !important;
@@ -69,6 +72,7 @@ body {
 }
 
 .pageImage h1 {
+	/* Any h1 element in that div */
 	color: white;
 	margin: auto;
 	text-shadow: 3px 3px 4px rgba(0, 0, 0, .5);
@@ -76,49 +80,99 @@ body {
 }
 
 p {
-    max-width: 70vw;
-    margin: auto;
+	max-width: 70vw;
+	margin: auto;
 }
 
 #homeImage {
-    height: 60px;
-    transition-duration: .5s;
+	/* The Scotbotics image on the nav bar */
+	height: 60px;
+	transition-duration: .5s;
 }
 
 .gotobutton {
-    font-size: 16pt;
-    background: #ddd;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    margin: 10px;
-    transition-duration: .5s;
+	/* The buttons with the arrows in them */
+	font-size: 16pt;
+	background: #ddd;
+	padding: 10px;
+	border: none;
+	border-radius: 5px;
+	margin: 10px;
+	transition-duration: .5s;
 }
 
 .gotobutton::after {
-    display: inline-block;
-    content: url("images/doublearrow.svg");
-    width: 15px;
-    padding: 5px;
-    padding-left: 15px;
-    background-size: contain;
-    transform: scale(1.4);
+	/* The actual arrows */
+	display: inline-block;
+	content: url("images/doublearrow.svg");
+	width: 15px;
+	padding: 5px;
+	padding-left: 15px;
+	background-size: contain;
+	transform: scale(1.4);
 }
 
 .gotobutton:hover {
-    background: #bbb;
+	background: #bbb;
 }
 
 .imageCont {
-    background: #9a77aa;
-    color: white;
-    font-style: italic;
-    border-radius: 5px;
-    overflow: hidden;
-    width: fit-content;
-    margin: auto;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, .4);
-    margin-top: 30px;
-    margin-bottom: 30px;
-    text-align: center;
+	/* The container around an image with a caption */
+	background: #9a77aa;
+	color: white;
+	font-style: italic;
+	border-radius: 5px;
+	overflow: hidden;
+	width: fit-content;
+	margin: auto;
+	box-shadow: 0px 0px 5px rgba(0, 0, 0, .4);
+	margin-top: 30px;
+	margin-bottom: 30px;
+	text-align: center;
+}
+
+
+.twoColumn {
+	/* Styles for images on the side of text */
+	display: flex;
+	justify-content: center;
+	margin-left: 10vw;
+	margin-right: 10vw;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.leftColumn {
+	/* The left column (for images) */
+	min-width: 25vw;
+}
+
+.rightColumn {
+	/* The right column (for text) */
+	text-align: left;
+	margin-left: 5vw;
+}
+
+.waterfall {
+	/* Images in the waterfall pattern */
+	height: 100px;
+	border-radius: 5px;
+	margin: 5px;
+}
+
+.right {
+	/* Image on the right side of the waterfall */
+	margin-left: 50%;
+}
+
+.left {
+	/* Image on the left side of the waterfall */
+	margin-right: 50%;
+}
+
+.sideimage {
+	/* Images on the side bar (no waterfall) */
+	border-radius: 5px;
+	margin: 15px;
+	max-width: 25vw;
 }
