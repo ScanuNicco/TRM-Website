@@ -1,5 +1,5 @@
 # The Scotbotics Website
-The newest and most up-to-date Scotbotics website. Compared to the old website, this one is better organized, way cheaper to host (old was ~$200 a year for Wix, now we just pay for the domain), and has more consistent styling across the site
+The newest and most up-to-date Scotbotics website. Compared to the old website, this one is better organized, way cheaper to host (we cut ~$200 a year of Wix costs), and has more consistent styling across the site
 
 ## Styling Guide
 * Consistent styles are key to having a good-looking website.
