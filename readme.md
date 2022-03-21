@@ -31,5 +31,5 @@ Certain things on the website should be updated yearly. Each year, be sure to up
 * The image of the team on the home page
 * The waterfall on `about/history.html` (add the newest team image to the bottom)
 * Also, make a new page under Our Robots with the current year's robot
-   + I recommend copying `robots/oppurtunity.html` and just changing the images and text.
+   + I recommend copying `robots/opportunity.html` and just changing the images and text.
    + If you want to add more than a few images, maybe consider copying `about/history.html` instead and using the waterfall structure.
