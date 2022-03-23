@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>c40 by Oscar</title>
+<link rel="stylesheet" href="https://new-scotbotics.github.io/scotbotics.com/styles.css"></link>
+<link rel="shortcut icon" href="c40.ico">
+<style>
+	* { background-color: #000000; padding: 0; margin: 0; }
+	canvas { background: #ffffff; display: block; margin: 0 auto; }
+</style>
+</head>
+<body onscroll="checkNavBar()">
+<div id="navBar">
+    <script src="https://new-scotbotics.github.io/scotbotics.com/scripts.js"></script>
+    <div class="navItem" style="padding: 5px;">
+        <a href="https://new-scotbotics.github.io/scotbotics.com/index.html">
+            <img id="homeImage" src="https://new-scotbotics.github.io/scotbotics.com/images/wordlogo.png">
+        </a>
+    </div>
+    <div id="navLinks">
+        <div class="dropdownCont">
+            <div class="navItem">
+                <a href="#">About</a>
+            </div>
+            <div class="dropdown">
+                <div class="navItem">
+                    <a href="https://new-scotbotics.github.io/scotbotics.com/about/team.html">Meet the Team</a>
+                </div>
+                <div class="navItem">
+                    <a href="https://new-scotbotics.github.io/scotbotics.com/about/history.html">History</a>
+                </div>
+                <div class="navItem">
+                    <a href="https://new-scotbotics.github.io/scotbotics.com/about/awards.html">Awards</a>
+                </div>
+                <div class="navItem">
+                    <a href="https://new-scotbotics.github.io/scotbotics.com/about/outreach.html">Outreach</a>
+                </div>
+            </div>
+        </div>
+        <div class="dropdownCont">
+            <div class="navItem">
+                <a href="#">Our Robots</a>
+            </div>
+            <div class="dropdown">
+                <div class="navItem">
+                    <a href="https://new-scotbotics.github.io/scotbotics.com/robots/opportunity.html">The Opportunity</a>
+                </div>
+                <div class="navItem">
+                    <a href="https://new-scotbotics.github.io/scotbotics.com/robots/quixote.html">John Quixote</a>
+                </div>
+                <div class="navItem">
+                    <a href="https://new-scotbotics.github.io/scotbotics.com/robots/scotbot.html">The Scotbot</a>
+                </div>
+            </div>
+        </div>
+        <div class="navItem">
+            <a href="https://new-scotbotics.github.io/scotbotics.com/apply.html">Apply</a>
+        </div>
+        <div class="navItem">
+            <a href="https://new-scotbotics.github.io/scotbotics.com/labyrinth.html">Labyrinth Competition</a>
+        </div>
+	</div>
+</div>
+
+<canvas id="myCanvas" width="400" height="480"></canvas>
+
+<script>
+	var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext("2d");
+    
+    document.addEventListener("keydown", keyDownHandler, false);
+    var grid = [
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 1, 1, 1, 0],
+        [1, 1, 1, 1, 1, 0, 0, 1, 0, 0],
+        [1, 0, 1, 0, 0, 0, 0, 1, 0, 0],
+        [1, 0, 1, 0, 0, 0, 0, 1, 0, 0],
+        [1, 0, 1, 0, 0, 0, 1, 1, 1, 1],
+        [1, 0, 1, 0, 0, 0, 1, 1, 0, 0],
+        [1, 0, 1, 0, 0, 0, 1, 0, 0, 1],
+        [1, 0, 0, 0, 0, 0, 1, 0, 1, 1],
+        [1, 0, 0, 1, 0, 0, 0, 0, 0, 1],
+        [0, 0, 1, 0, 1, 0, 0, 0, 0, 0]
+    ];
+    
+    var p1x = 0;
+    var p1y = 0;
+    function draw() {
+        ctx.beginPath();
+        ctx.rect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = "#ffffff";
+        ctx.fill();
+        ctx.closePath();
+        for(var iy = 0; iy < 12; iy++){
+            for (var ix = 0; ix < 10; ix++){
+                if(grid[iy][ix] == 1){
+                    ctx.beginPath();
+                    ctx.rect(ix*40, iy*40, 40, 40);
+                    ctx.fillStyle = "#000000";
+                    ctx.fill();
+                    ctx.closePath();
+                }
+            }
+        }
+        ctx.beginPath();
+        ctx.rect((p1x*40)+1, (p1y*40)+1, 38, 38);
+        ctx.fillStyle = "#0000ff";
+        ctx.fill();
+        ctx.closePath();
+    }
+    draw();
+    
+    function keyDownHandler(e) {
+        if(e.key == "ArrowUp" && p1y-1 >= 0) {
+            if(grid[p1y-1][p1x] == 0){ 
+                p1y-=1
+            }
+        }
+        if(e.key == "ArrowLeft" && p1x-1 >= 0) {
+            if(grid[p1y][p1x-1] == 0){ 
+                p1x-=1
+            }
+        }
+        if(e.key == "ArrowDown" && p1y+1 <= 11) {
+            if(grid[p1y+1][p1x] == 0){ 
+                p1y+=1
+            }
+        }
+        if(e.key == "ArrowRight" && p1x+1 <= 9) {
+            if(grid[p1y][p1x+1] == 0){ 
+                p1x+=1
+            }
+        }
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        draw();
+    }
+</script>
+
+</body>
+</html>
