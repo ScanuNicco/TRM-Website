@@ -176,3 +176,43 @@ p {
 	margin: 15px;
 	max-width: 25vw;
 }
+
+.window {
+	position: fixed;
+	top: -100vh;
+	left: 25vw;
+	width: 50vw;
+	height: 80vh;
+	background: #ddd;
+	border-radius: 5px;
+	overflow: hidden;
+	min-width: 400px;
+	min-height: 520px;
+	box-shadow: 3px 3px 5px rgba(0, 0, 0, .5);
+	transition: ease-in-out .5s;
+}
+
+.windowHeader {
+	background: #ccc;
+	text-align: left;
+	display: flex;
+	justify-content: space-between;
+}
+
+.windowHeader button {
+	float: right;
+	width: 50px;
+	font-size: 18pt;
+	border-radius: 0px;
+	border: none;
+	transition-duration: .5s;
+}
+
+.windowHeader button:hover {
+	background: #f33;
+}
+
+.windowHeader h2 {
+	margin: 5px;
+	margin-left: 10px;
+}

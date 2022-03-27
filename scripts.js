@@ -15,3 +15,11 @@ function checkNavBar() {
         document.getElementById("homeImage").style.height = "60px";
     }
 }
+
+function showWindow(id) {
+	document.getElementById(id).style.top = "10vh";
+}
+
+function closeWindow(id) {
+	document.getElementById(id).style.top = "-100vh";
+}
