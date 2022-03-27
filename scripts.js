@@ -18,8 +18,10 @@ function checkNavBar() {
 
 function showWindow(id) {
 	document.getElementById(id).style.top = "10vh";
+	document.body.style.overflowY = "hidden";
 }
 
 function closeWindow(id) {
 	document.getElementById(id).style.top = "-100vh";
+	document.body.style.overflowY = "auto";
 }
