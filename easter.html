@@ -1,7 +1,6 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>c40 html5</title>
     <style>
     	* { background-color: #000000; padding: 0; margin: 0; }
     	canvas { background: #ffffff; display: block; margin: 0 auto; }
@@ -9,7 +8,7 @@
 </head>
 <body>
 
-<canvas id="myCanvas" width="400" height="480"></canvas>
+<canvas id="myCanvas" width="600" height="480"></canvas>
 
 <script>
 	var canvas = document.getElementById("myCanvas");
@@ -35,10 +34,23 @@
     var p1y = 0;
     function draw() {
         ctx.beginPath();
-        ctx.rect(0, 0, canvas.width, canvas.height);
+        ctx.rect(0, 0, 400, 480);
         ctx.fillStyle = "#ffffff";
         ctx.fill();
         ctx.closePath();
+    // user friendly instructions and stuff go here
+        ctx.beginPath();
+        ctx.rect(400, 0, 600, 480);
+        ctx.fillStyle = "#000000";
+        ctx.fill();
+        ctx.closePath();
+        ctx.font = '18px sans-serif';
+        ctx.fillStyle = "#ffffff";
+        ctx.fillText('Click/tap the window', 410, 20);
+        ctx.fillText('for controls to work', 410, 45);
+        ctx.fillText('Arrow keys or WASD to', 410, 70);
+        ctx.fillText('move, touch wip', 410, 95);
+
         for(var iy = 0; iy < 12; iy++){
             for (var ix = 0; ix < 10; ix++){
                 if(grid[iy][ix] == 1){
@@ -59,22 +71,22 @@
     draw();
     
     function keyDownHandler(e) {
-        if(e.key == "ArrowUp" && p1y-1 >= 0) {
+        if((e.key == "ArrowUp"||e.keyCode == 87) && p1y-1 >= 0) {
             if(grid[p1y-1][p1x] == 0){ 
                 p1y-=1
             }
         }
-        if(e.key == "ArrowLeft" && p1x-1 >= 0) {
+        if((e.key == "ArrowLeft"||e.keyCode == 65) && p1x-1 >= 0) {
             if(grid[p1y][p1x-1] == 0){ 
                 p1x-=1
             }
         }
-        if(e.key == "ArrowDown" && p1y+1 <= 11) {
+        if((e.key == "ArrowDown"||e.keyCode == 83) && p1y+1 <= 11) {
             if(grid[p1y+1][p1x] == 0){ 
                 p1y+=1
             }
         }
-        if(e.key == "ArrowRight" && p1x+1 <= 9) {
+        if((e.key == "ArrowRight"||e.keyCode == 68) && p1x+1 <= 9) {
             if(grid[p1y][p1x+1] == 0){ 
                 p1x+=1
             }
