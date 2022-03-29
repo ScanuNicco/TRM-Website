@@ -25,3 +25,4 @@ function closeWindow(id) {
 	document.getElementById(id).style.top = "-100vh";
 	document.body.style.overflowY = "auto";
 }
+
