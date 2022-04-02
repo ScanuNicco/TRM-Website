@@ -1,100 +1,196 @@
 <html>
+
 <head>
-    <meta charset="utf-8" />
-    <style>
-    	* { background-color: #000000; padding: 0; margin: 0; }
-    	canvas { background: #ffffff; display: block; margin: 0 auto; }
-    </style>
+	<meta charset="utf-8" />
+	<style>
+		* {
+			background-color: #000000;
+			padding: 0;
+			margin: 0;
+			font-family: sans-serif;
+		}
+
+		canvas {
+			background: #ffffff;
+			display: block;
+			margin: 0 auto;
+		}
+
+		#buttonsContainer {
+			position: absolute;
+			right: 0px;
+			bottom: 0px;
+			text-align: center;
+		}
+
+		#buttonsContainer button {
+			color: black;
+			background: #ddd;
+			border: none;
+			width: 50px;
+			height: 50px;
+			border-radius: 5px;
+			font-size: 18pt;
+			margin: 3px;
+		}
+
+		#modal {
+			position: absolute;
+			color: white;
+			width: 100vw;
+			height: 100vh;
+			background: rgba(0, 0, 0, .95);
+			backdrop-filter: blur(10px);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			z-index: 3;
+		}
+
+		#modal p {
+			text-align: center;
+			background: transparent;
+			font-size: 24pt;
+		}
+
+	</style>
 </head>
+
 <body>
 
-<canvas id="myCanvas" width="600" height="480"></canvas>
+	<div id="modal" onclick="startGame()">
+		<p>Click anywhere to begin game.<br>
+			Use arrow keys or WASD to move.</p>
+	</div>
 
-<script>
-	var canvas = document.getElementById("myCanvas");
-    var ctx = canvas.getContext("2d");
-    
-    document.addEventListener("keydown", keyDownHandler, false);
-    var grid = [
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 1, 1, 1, 0],
-        [1, 1, 1, 1, 1, 0, 0, 1, 0, 0],
-        [1, 0, 1, 0, 0, 0, 0, 1, 0, 0],
-        [1, 0, 1, 0, 0, 0, 0, 1, 0, 0],
-        [1, 0, 1, 0, 0, 0, 1, 1, 1, 1],
-        [1, 0, 1, 0, 0, 0, 1, 1, 0, 0],
-        [1, 0, 1, 0, 0, 0, 1, 0, 0, 1],
-        [1, 0, 0, 0, 0, 0, 1, 0, 1, 1],
-        [1, 0, 0, 1, 0, 0, 0, 0, 0, 1],
-        [0, 0, 1, 0, 1, 0, 0, 0, 0, 0]
-    ];
-    
-    var p1x = 0;
-    var p1y = 0;
-    function draw() {
-        ctx.beginPath();
-        ctx.rect(0, 0, 400, 480);
-        ctx.fillStyle = "#ffffff";
-        ctx.fill();
-        ctx.closePath();
-    // user friendly instructions and stuff go here
-        ctx.beginPath();
-        ctx.rect(400, 0, 600, 480);
-        ctx.fillStyle = "#000000";
-        ctx.fill();
-        ctx.closePath();
-        ctx.font = '18px sans-serif';
-        ctx.fillStyle = "#ffffff";
-        ctx.fillText('Click/tap the window', 410, 20);
-        ctx.fillText('for controls to work', 410, 45);
-        ctx.fillText('Arrow keys or WASD to', 410, 70);
-        ctx.fillText('move, touch wip', 410, 95);
+	<canvas id="myCanvas" width="600" height="480"></canvas>
 
-        for(var iy = 0; iy < 12; iy++){
-            for (var ix = 0; ix < 10; ix++){
-                if(grid[iy][ix] == 1){
-                    ctx.beginPath();
-                    ctx.rect(ix*40, iy*40, 40, 40);
-                    ctx.fillStyle = "#000000";
-                    ctx.fill();
-                    ctx.closePath();
-                }
-            }
-        }
-        ctx.beginPath();
-        ctx.rect((p1x*40)+1, (p1y*40)+1, 38, 38);
-        ctx.fillStyle = "#0000ff";
-        ctx.fill();
-        ctx.closePath();
-    }
-    draw();
-    
-    function keyDownHandler(e) {
-        if((e.key == "ArrowUp"||e.keyCode == 87) && p1y-1 >= 0) {
-            if(grid[p1y-1][p1x] == 0){ 
-                p1y-=1
-            }
-        }
-        if((e.key == "ArrowLeft"||e.keyCode == 65) && p1x-1 >= 0) {
-            if(grid[p1y][p1x-1] == 0){ 
-                p1x-=1
-            }
-        }
-        if((e.key == "ArrowDown"||e.keyCode == 83) && p1y+1 <= 11) {
-            if(grid[p1y+1][p1x] == 0){ 
-                p1y+=1
-            }
-        }
-        if((e.key == "ArrowRight"||e.keyCode == 68) && p1x+1 <= 9) {
-            if(grid[p1y][p1x+1] == 0){ 
-                p1x+=1
-            }
-        }
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        draw();
-    }
-</script>
+	<div id="buttonsContainer">
+		<button onclick="goUp()">&#129029;</button>
+		<br>
+		<button onclick="goLeft()">&#129028;</button>
+		<button onclick="goRight()" aria-busy="" style="margin-left: 50px;">&#129030;</button>
+		<br>
+		<button onclick="goDown()">&#129031;</button>
+	</div>
+
+	<script>
+		var canvas = document.getElementById("myCanvas");
+		var ctx = canvas.getContext("2d");
+		var gameRunning = false;
+
+		document.addEventListener("keydown", keyDownHandler, false);
+		var grid = [
+			[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+			[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+			[0, 0, 0, 0, 0, 0, 1, 1, 1, 0],
+			[1, 1, 1, 1, 1, 0, 0, 1, 0, 0],
+			[1, 0, 1, 0, 0, 0, 0, 1, 0, 0],
+			[1, 0, 1, 0, 0, 0, 0, 1, 0, 0],
+			[1, 0, 1, 0, 0, 0, 1, 1, 1, 1],
+			[1, 0, 1, 0, 0, 0, 1, 1, 0, 0],
+			[1, 0, 1, 0, 0, 0, 1, 0, 0, 1],
+			[1, 0, 0, 0, 0, 0, 1, 0, 1, 1],
+			[1, 0, 0, 1, 0, 0, 0, 0, 0, 1],
+			[0, 0, 1, 0, 1, 0, 0, 0, 0, 0]
+		];
+
+		var p1x = 0;
+		var p1y = 0;
+
+		function draw() {
+			ctx.beginPath();
+			ctx.rect(0, 0, 400, 480);
+			ctx.fillStyle = "#ffffff";
+			ctx.fill();
+			ctx.closePath();
+			// user friendly instructions and stuff go here
+			ctx.beginPath();
+			ctx.rect(400, 0, 600, 480);
+			ctx.fillStyle = "#000000";
+			ctx.fill();
+			ctx.closePath();
+			ctx.font = '18px sans-serif';
+			ctx.fillStyle = "#ffffff";
+
+
+			for (var iy = 0; iy < 12; iy++) {
+				for (var ix = 0; ix < 10; ix++) {
+					if (grid[iy][ix] == 1) {
+						ctx.beginPath();
+						ctx.rect(ix * 40, iy * 40, 40, 40);
+						ctx.fillStyle = "#000000";
+						ctx.fill();
+						ctx.closePath();
+					}
+				}
+			}
+			ctx.beginPath();
+			ctx.rect((p1x * 40) + 1, (p1y * 40) + 1, 38, 38);
+			ctx.fillStyle = "#0000ff";
+			ctx.fill();
+			ctx.closePath();
+		}
+		draw();
+
+		function keyDownHandler(e) {
+			if (gameRunning) {
+				if ((e.key == "ArrowUp" || e.keyCode == 87)) {
+					goUp();
+				}
+				if ((e.key == "ArrowLeft" || e.keyCode == 65) && p1x - 1 >= 0) {
+					goLeft();
+				}
+				if ((e.key == "ArrowDown" || e.keyCode == 83) && p1y + 1 <= 11) {
+					goDown();
+				}
+				if ((e.key == "ArrowRight" || e.keyCode == 68) && p1x + 1 <= 9) {
+					goRight();
+				}
+			}
+		}
+
+		function goUp() {
+			console.log("function is running");
+			if (p1y - 1 >= 0 && grid[p1y - 1][p1x] == 0) {
+				p1y -= 1;
+			}
+			redraw();
+		}
+
+		function goLeft() {
+			if (grid[p1y][p1x - 1] == 0) {
+				p1x -= 1
+			}
+			redraw();
+		}
+
+		function goRight() {
+			if (grid[p1y][p1x + 1] == 0) {
+				p1x += 1
+			}
+			redraw();
+		}
+
+		function goDown() {
+			if (grid[p1y + 1][p1x] == 0) {
+				p1y += 1
+			}
+			redraw();
+		}
+
+		function redraw() {
+			ctx.clearRect(0, 0, canvas.width, canvas.height);
+			draw();
+		}
+
+		function startGame() {
+			gameRunning = true;
+			document.getElementById("modal").style.display = "none";
+		}
+
+	</script>
 
 </body>
+
 </html>
