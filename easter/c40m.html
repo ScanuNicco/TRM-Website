@@ -60,7 +60,7 @@
 			Use arrow keys or WASD to move.</p>
 	</div>
 
-	<canvas id="myCanvas" width="600" height="480"></canvas>
+	<canvas id="myCanvas" width="400" height="480"></canvas>
 
 	<div id="buttonsContainer">
 		<button onclick="goLeft()">&#60;</button>
@@ -99,16 +99,6 @@
 			ctx.fillStyle = "#ffffff";
 			ctx.fill();
 			ctx.closePath();
-			// user friendly instructions and stuff go here
-			ctx.beginPath();
-			ctx.rect(400, 0, 600, 480);
-			ctx.fillStyle = "#000000";
-			ctx.fill();
-			ctx.closePath();
-			ctx.font = '18px sans-serif';
-			ctx.fillStyle = "#ffffff";
-
-
 			for (var iy = 0; iy < 12; iy++) {
 				for (var ix = 0; ix < 10; ix++) {
 					if (grid[iy][ix] == 1) {
