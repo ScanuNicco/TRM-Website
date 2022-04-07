@@ -124,13 +124,13 @@
 				if ((e.key == "ArrowUp" || e.keyCode == 87)) {
 					goUp();
 				}
-				if ((e.key == "ArrowLeft" || e.keyCode == 65) && p1x - 1 >= 0) {
+				if ((e.key == "ArrowLeft" || e.keyCode == 65)) {
 					goLeft();
 				}
-				if ((e.key == "ArrowDown" || e.keyCode == 83) && p1y + 1 <= 11) {
+				if ((e.key == "ArrowDown" || e.keyCode == 83)) {
 					goDown();
 				}
-				if ((e.key == "ArrowRight" || e.keyCode == 68) && p1x + 1 <= 9) {
+				if ((e.key == "ArrowRight" || e.keyCode == 68)) {
 					goRight();
 				}
 			}
@@ -145,21 +145,21 @@
 		}
 
 		function goLeft() {
-			if (grid[p1y][p1x - 1] == 0) {
+			if (p1x - 1 >= 0 && grid[p1y][p1x - 1] == 0) {
 				p1x -= 1
 			}
 			redraw();
 		}
 
 		function goRight() {
-			if (grid[p1y][p1x + 1] == 0) {
+			if (p1x + 1 <= 9 && grid[p1y][p1x + 1] == 0) {
 				p1x += 1
 			}
 			redraw();
 		}
 
 		function goDown() {
-			if (grid[p1y + 1][p1x] == 0) {
+			if (p1y + 1 <= 11 && grid[p1y + 1][p1x] == 0) {
 				p1y += 1
 			}
 			redraw();
