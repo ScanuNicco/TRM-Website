@@ -15,7 +15,7 @@ function checkNavBar() {
         document.getElementById("homeImage").style.height = "60px";
     }
 }
-
+/* pretty sure this was only used for the removed easter egg, keeping in case we need it
 function showWindow(id) {
 	document.getElementById(id).style.top = "10vh";
 	document.body.style.overflowY = "hidden";
@@ -25,4 +25,4 @@ function closeWindow(id) {
 	document.getElementById(id).style.top = "-100vh";
 	document.body.style.overflowY = "auto";
 }
-
+*/

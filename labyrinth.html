@@ -1,63 +1,62 @@
+<!DOCTYPE html>
+<html>
 <head>
-	<title>Welcome to Scotbotics!</title>
-	<link rel="stylesheet" href="styles.css">
-	</link>
-	<link rel="icon" href="images/robotlogo.png">
-	</link>
+<title>Welcome to Scotbotics!</title>
+<link rel="stylesheet" href="styles.css"></link>
+<link rel="icon" href="images/robotlogo.png"></link>
 </head>
-
 <body onscroll="checkNavBar()">
-	<div id="navBar">
-		<script src="scripts.js"></script>
-		<div class="navItem" style="padding: 5px;">
-			<a href="index.html">
-				<img id="homeImage" src="images/wordlogo.png">
-			</a>
+<div id="navBar">
+	<script src="scripts.js"></script>
+	<div class="navItem" style="padding: 5px;">
+		<a href="index.html">
+			<img id="homeImage" src="images/wordlogo.png">
+		</a>
+	</div>
+	<div id="navLinks">
+		<div class="dropdownCont">
+			<div class="navItem">
+				<a href="#">About</a>
+			</div>
+			<div class="dropdown">
+				<div class="navItem">
+					<a href="about/team.html">Meet the Team</a>
+				</div>
+				<div class="navItem">
+					<a href="about/history.html">History</a>
+				</div>
+				<div class="navItem">
+					<a href="about/awards.html">Awards</a>
+				</div>
+				<div class="navItem">
+					<a href="about/outreach.html">Outreach</a>
+				</div>
+			</div>
 		</div>
-		<div id="navLinks">
-			<div class="dropdownCont">
-				<div class="navItem">
-					<a href="#">About</a>
-				</div>
-				<div class="dropdown">
-					<div class="navItem">
-						<a href="about/team.html">Meet the Team</a>
-					</div>
-					<div class="navItem">
-						<a href="about/history.html">History</a>
-					</div>
-					<div class="navItem">
-						<a href="about/awards.html">Awards</a>
-					</div>
-					<div class="navItem">
-						<a href="about/outreach.html">Outreach</a>
-					</div>
-				</div>
-			</div>
-			<div class="dropdownCont">
-				<div class="navItem">
-					<a href="#">Our Robots</a>
-				</div>
-				<div class="dropdown">
-					<div class="navItem">
-						<a href="robots/opportunity.html">The Opportunity</a>
-					</div>
-					<div class="navItem">
-						<a href="robots/quixote.html">John Quixote</a>
-					</div>
-					<div class="navItem">
-						<a href="robots/scotbot.html">The Scotbot</a>
-					</div>
-				</div>
-			</div>
+		<div class="dropdownCont">
 			<div class="navItem">
-				<a href="apply.html">Apply</a>
+				<a href="#">Our Robots</a>
 			</div>
-			<div class="navItem">
-				<a href="#" onclick="showWindow('easter')">Labyrinth Competition</a>
+			<div class="dropdown">
+				<div class="navItem">
+					<a href="robots/opportunity.html">The Opportunity</a>
+				</div>
+				<div class="navItem">
+					<a href="robots/quixote.html">John Quixote</a>
+				</div>
+				<div class="navItem">
+					<a href="robots/scotbot.html">The Scotbot</a>
+				</div>
 			</div>
+		</div>
+		<div class="navItem">
+			<a href="apply.html">Apply</a>
+		</div>
+		<div class="navItem">
+			<a href="labyrinth.html">Labyrinth Competition</a>
 		</div>
 	</div>
+</div>
 	<div style="background: url('images/arduino.jpg');" class="pageImage">
 		<div>
 			<h1>Labyrinth Competition</h1>
@@ -85,15 +84,5 @@
 		<br>
 		More information about the labyrinth competition can be found on <a href="https://docs.google.com/document/d/1fygTfqH90P9ydNLVcCvRZMimWneZmWzm9bNxe_WSkmw/edit?usp=sharing">this document</a>.
 	</p>
-	<div class="window" id="easter">
-		<div class="windowHeader">
-			<h2>Labyrinth Game (c40)</h2>
-			<button onclick="closeWindow('easter')">&times;</button>
-		</div>
-		<div class="windowBody">
-		<iframe style="width: 100%; height: 100%; border: none" src="easter/c40.html"></iframe>
-		</div>
-	</div>
 </body>
-
 </html>
