@@ -226,3 +226,9 @@ p {
 	margin: 5px;
 	margin-left: 10px;
 }
+
+iframe {
+	border: none;
+	border-radius: 5px;
+	overflow: hidden;
+}
