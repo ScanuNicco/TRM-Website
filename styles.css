@@ -1,3 +1,7 @@
+:root {
+	--accent-color: firebrick;
+}
+
 body {
 	text-align: center;
 	font-family: sans-serif;
@@ -118,7 +122,7 @@ p {
 
 .imageCont {
 	/* The container around an image with a caption */
-	background: #9a77aa;
+	background: var(--accent-color);
 	color: white;
 	font-style: italic;
 	border-radius: 5px;
