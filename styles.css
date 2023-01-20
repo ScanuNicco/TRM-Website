@@ -20,6 +20,7 @@ body {
 	text-shadow: 1px 1px 1px rgba(0, 0, 0, .7), 2px 2px 3px rgba(0, 0, 0, .7), 4px 4px 10px rgba(0, 0, 0, .7);
 	transition-duration: .5s;
 	max-height: 53px;
+	z-index: 4;
 }
 
 .navItem {
