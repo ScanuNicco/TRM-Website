@@ -9,8 +9,11 @@
 </head>
 <body onscroll="checkNavBar()">
 {% include nav.html %}
-	<div style="background: url('images/drift.jpg'); background-position-y: 70% !important;" class="pageImage">
-	<div>
+	<div style="overflow: hidden; position: relative;" class="pageImage">
+	<video autoplay muted loop id="homeVideo">
+		<source src="home.mp4"></source>
+	</video>
+	<div style="z-index: 2; position: relative;">
     <h1>Team Rose Motorsports</h1>
 	</div>
 	</div>
@@ -25,5 +28,13 @@
 	<h2>Contact Us!</h2>
 	<p>If you have any questions about joining or anything else related to the team, feel free to get in touch.</p>
 	<button class="gotobutton" onclick="location.href = 'mailto:scotbotics3873@gmail.com'">Email Us</button>
+	<style>
+	#homeVideo {
+		position: absolute;
+		left: 0px;
+		width: 100vw;
+		z-index: 1;
+	}
+	</style>
 </body>
 </html>
