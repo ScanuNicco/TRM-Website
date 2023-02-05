@@ -150,6 +150,7 @@ p {
 .leftColumn {
 	/* The left column (for images) */
 	min-width: 25vw;
+	max-width: 30vw;
 }
 
 .rightColumn {
@@ -160,9 +161,9 @@ p {
 
 .waterfall {
 	/* Images in the waterfall pattern */
-	height: 100px;
+	height: 200px;
 	border-radius: 5px;
-	margin: 5px;
+	margin: 15px;
 }
 
 .right {
@@ -232,4 +233,10 @@ iframe {
 	border: none;
 	border-radius: 5px;
 	overflow: hidden;
+}
+
+.quoteBlock {
+  border-left: solid 5px gray;
+  padding-left: 10px;
+  font-family: serif;
 }
