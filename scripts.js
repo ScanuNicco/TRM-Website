@@ -10,6 +10,7 @@ function checkNavBar() {
         document.getElementById("pathr").style.fill = "#000";
         document.getElementById("pathm").style.fill = "#000";
         document.getElementById("redR").style.fill = "#800";
+        document.getElementById("homeImage").style.filter = "none";
     } else {
         document.getElementById("navBar").style.background = "transparent";
         document.getElementById("navBar").style.backdropFilter = "none";
@@ -21,6 +22,7 @@ function checkNavBar() {
         document.getElementById("pathr").style.fill = "#fff";
         document.getElementById("pathm").style.fill = "#fff";
         document.getElementById("redR").style.fill = "#fffa";
+        document.getElementById("homeImage").style.filter = "drop-shadow(rgba(0, 0, 0, 0.4) 3px 5px 2px)";
     }
 }
 /* pretty sure this was only used for the removed easter egg, keeping in case we need it

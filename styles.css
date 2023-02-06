@@ -90,9 +90,10 @@ p {
 }
 
 #homeImage {
-	/* The Scotbotics image on the nav bar */
+	/* The TRM Logo on the nav bar */
 	height: 60px;
 	transition-duration: .5s;
+	filter: drop-shadow(rgba(0, 0, 0, 0.4) 3px 5px 2px);
 }
 
 .gotobutton {
