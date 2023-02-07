@@ -69,6 +69,7 @@ body {
 	/* The div at the top of the page with the image */
 	width: 100vw;
 	height: 50vh;
+	max-height: 56vw;
 	background-size: cover !important;
 	background-position-y: 30% !important;
 	display: flex;
