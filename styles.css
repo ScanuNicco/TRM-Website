@@ -242,3 +242,22 @@ iframe {
   padding-left: 10px;
   font-family: serif;
 }
+
+.lookAtMe {
+  font-size: 15pt;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px #0006;
+  background: linear-gradient(#a22, #844);
+  color: white;
+  transition: transform ease .2s;
+}
+
+.navButton {
+  padding: 3px 8px;
+}
+
+.lookAtMe:hover {
+  transform: scale(0.9);
+}
