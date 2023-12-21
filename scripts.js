@@ -5,7 +5,7 @@ function checkNavBar() {
         document.getElementById("navBar").style.color = "black";
         document.getElementById("navBar").style.boxShadow = "0px 3px 3px rgba(0, 0, 0, .5)";
         document.getElementById("navBar").style.textShadow = "none";
-        document.getElementById("homeImage").style.height = "40px";
+        document.getElementById("homeImage").style.height = "45px";
         document.getElementById("patht").style.fill = "#000";
         document.getElementById("pathr").style.fill = "#000";
         document.getElementById("pathm").style.fill = "#000";
