@@ -108,17 +108,17 @@ p {
 	background: linear-gradient(#dbd0d0, #8a8a8a);
 	color: black;
 	transition: transform ease .2s;
+	position: relative;
 }
 
 .gotobutton::after {
 	/* The actual arrows */
-	display: inline-block;
 	content: url("images/doublearrow.svg");
 	width: 15px;
-	padding: 5px;
-	padding-left: 15px;
 	background-size: contain;
 	transform: scale(1.4);
+	position: absolute;
+	right: 15px;
 }
 
 .gotobutton:hover {
@@ -299,6 +299,10 @@ iframe {
 	width: 350px;
 	margin: 20px auto;
 	text-decoration: none;
+}
+
+.bigLAM:hover {
+	transform: scale(0.96);
 }
 
 @media (max-width:600px)  {
