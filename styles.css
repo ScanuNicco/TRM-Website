@@ -138,6 +138,11 @@ p {
 	margin-top: 30px;
 	margin-bottom: 30px;
 	text-align: center;
+	width: min-content;
+}
+
+.imageCont p {
+	margin: 5px 15px;
 }
 
 
