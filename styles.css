@@ -289,7 +289,7 @@ iframe {
 	filter: none;
 }
 
-.imageCont image {
+.imageCont img {
 		width: 600px;
 }
 
@@ -368,7 +368,11 @@ iframe {
 		max-width: 80vw;
 	}
 
-	.imageCont image {
+	.imageCont img {
 		width: 80vw;
+	}
+
+	.pageImage h1 {
+		font-size: 28pt;
 	}
 }
