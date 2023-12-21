@@ -1,30 +1,25 @@
 function checkNavBar() {
     if(window.scrollY > 0){
-        document.getElementById("navBar").style.background = "#fff";
-        document.getElementById("navBar").style.backdropFilter = "blur(15px)";
-        document.getElementById("navBar").style.color = "black";
-        document.getElementById("navBar").style.boxShadow = "0px 3px 3px rgba(0, 0, 0, .5)";
-        document.getElementById("navBar").style.textShadow = "none";
-        document.getElementById("homeImage").style.height = "45px";
-        document.getElementById("patht").style.fill = "#000";
-        document.getElementById("pathr").style.fill = "#000";
-        document.getElementById("pathm").style.fill = "#000";
-        document.getElementById("redR").style.fill = "#800";
-        document.getElementById("homeImage").style.filter = "none";
+        document.getElementById("navBar").classList.add("scrollNotTop");
     } else {
-        document.getElementById("navBar").style.background = "transparent";
-        document.getElementById("navBar").style.backdropFilter = "none";
-        document.getElementById("navBar").style.color = "white";
-        document.getElementById("navBar").style.boxShadow = "none";
-        document.getElementById("navBar").style.textShadow = "1px 1px 1px rgba(0, 0, 0, .7), 2px 2px 3px rgba(0, 0, 0, .7), 4px 4px 10px rgba(0, 0, 0, .7)";
-        document.getElementById("homeImage").style.height = "60px";
-        document.getElementById("patht").style.fill = "#fff";
-        document.getElementById("pathr").style.fill = "#fff";
-        document.getElementById("pathm").style.fill = "#fff";
-        document.getElementById("redR").style.fill = "#fffa";
-        document.getElementById("homeImage").style.filter = "drop-shadow(rgba(0, 0, 0, 0.4) 3px 5px 2px)";
+        document.getElementById("navBar").classList.remove("scrollNotTop");
     }
 }
+
+var navOpen = false;
+function toggleMobileNav() {
+    if(!navOpen){
+        document.getElementById("navLinks").classList.add("showMobileDropdown");
+        document.getElementById("mobileMenu").innerHTML = "&times;";
+    } else {
+        document.getElementById("navLinks").classList.remove("showMobileDropdown");
+        document.getElementById("mobileMenu").innerHTML = "&#9776;";
+    }
+    navOpen = !navOpen;
+}
+
+document.body.onscroll= checkNavBar;
+
 /* pretty sure this was only used for the removed easter egg, keeping in case we need it
 function showWindow(id) {
 	document.getElementById(id).style.top = "10vh";

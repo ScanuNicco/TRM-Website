@@ -36,7 +36,7 @@ body {
 	font-size: 14pt;
 }
 
-.navItem:hover {
+.navItem:hover, #mobileMenu:hover {
 	background: #9998;
 	transition-duration: .5s;
 }
@@ -261,4 +261,85 @@ iframe {
 
 .lookAtMe:hover {
   transform: scale(0.9);
+}
+
+#mobileMenu {
+	display: none;
+	font-size: 24pt;
+	padding: 10pt;
+}
+
+#navBar.scrollNotTop {
+		color: black;
+		box-shadow: 0px 3px 3px rgba(0, 0, 0, .5);
+		text-shadow: none;
+		background: white;
+}
+
+.scrollNotTop #patht, .scrollNotTop #pathr, .scrollNotTop #pathm {
+	fill: black !important;
+}
+
+.scrollNotTop #redR {
+	fill: #800!important;
+}
+
+.scrollNotTop #homeImage {
+	height: 45px;
+	filter: none;
+}
+
+@media (max-width:600px)  {
+	#navLinks {
+		opacity: 0;
+		left: 100vw;
+		position: absolute;
+		top: 63px;
+		display: block;
+		overflow-y: auto;
+		background: white;
+		transition-duration: .2s;
+		border-radius: 5px;
+		margin-top: 10px;
+		max-height: calc(100vh - 73px);
+	}
+
+	.scrollNotTop #navLinks {
+		border-radius: 0px;
+		margin-top: 0px;
+		max-height: calc(100vh - 63px);
+	}
+
+	#navLinks.showMobileDropdown {
+		opacity: 1;
+		left: 0px;
+	}
+
+	.navItem {
+		color: black;
+		text-shadow: none;
+	}
+
+	.dropdown {
+		overflow: show;
+		max-height: initial;
+		box-shadow: none;
+	}
+
+	.dropdownCont > .navItem {
+		font-weight: bold;
+	}
+
+	.lookAtMe {
+		width: 90%;
+	}
+
+	.pageImage {
+		max-height: 50vh;
+		background-position-x: center !important;
+	}
+
+	#mobileMenu {
+		display: block;
+	}
 }
