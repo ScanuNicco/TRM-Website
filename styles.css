@@ -289,6 +289,10 @@ iframe {
 	filter: none;
 }
 
+.imageCont image {
+		width: 600px;
+}
+
 @media (max-width:600px)  {
 	#navLinks {
 		opacity: 0;
@@ -341,5 +345,30 @@ iframe {
 
 	#mobileMenu {
 		display: block;
+	}
+
+	.twoColumn {
+		flex-direction: column-reverse;
+		margin-left: 0px;
+		margin-right: 0px;
+		margin-top: 0px;
+		margin-bottom: 0px;
+	}
+
+	.leftColumn {
+		max-width: 100vw
+	}
+
+	.rightColumn {
+		margin-left: 5px;
+		margin-right: 5px;
+	}
+
+	.sideimage {
+		max-width: 80vw;
+	}
+
+	.imageCont image {
+		width: 80vw;
 	}
 }
