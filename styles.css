@@ -101,12 +101,13 @@ p {
 .gotobutton {
 	/* The buttons with the arrows in them */
 	font-size: 16pt;
-	background: #ddd;
-	padding: 10px;
+	padding: 12px;
 	border: none;
 	border-radius: 5px;
-	margin: 10px;
-	transition-duration: .5s;
+	box-shadow: 2px 2px 5px #0006;
+	background: linear-gradient(#dbd0d0, #8a8a8a);
+	color: black;
+	transition: transform ease .2s;
 }
 
 .gotobutton::after {
@@ -259,7 +260,7 @@ iframe {
   padding: 3px 8px;
 }
 
-.lookAtMe:hover {
+.lookAtMe:hover, .gotobutton:hover {
   transform: scale(0.9);
 }
 
@@ -341,7 +342,7 @@ iframe {
 		font-weight: bold;
 	}
 
-	.lookAtMe {
+	.lookAtMe, .gotobutton {
 		width: 90%;
 	}
 
