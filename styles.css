@@ -293,6 +293,13 @@ iframe {
 		width: 600px;
 }
 
+.bigLAM {
+	display: block;
+	width: 350px;
+	margin: 20px auto;
+	text-decoration: none;
+}
+
 @media (max-width:600px)  {
 	#navLinks {
 		opacity: 0;
@@ -374,5 +381,13 @@ iframe {
 
 	.pageImage h1 {
 		font-size: 28pt;
+	}
+
+	.left {
+		margin-right: 20%;
+	}
+
+	.right {
+		margin-left: 20%;
 	}
 }
