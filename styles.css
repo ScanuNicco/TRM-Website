@@ -401,4 +401,9 @@ iframe {
 	.right {
 		margin-left: 20%;
 	}
+
+	.lookAtMe {
+		padding: 12px 30px;
+		min-width: min-content;
+	}
 }
