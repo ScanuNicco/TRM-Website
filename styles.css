@@ -259,7 +259,7 @@ iframe {
   background: linear-gradient(#ff3131, #bb5d5d);
   color: white;
   transition: transform ease .2s;
-  font-size: bold;
+  font-weight: bold;
 }
 
 .navButton {
