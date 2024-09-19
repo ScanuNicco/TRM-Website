@@ -259,7 +259,7 @@ iframe {
   background: linear-gradient(#ff3131, #bb5d5d);
   color: white;
   transition: transform ease .2s;
-  font-size: bold;
+  font-weight: bold;
 }
 
 .navButton {
@@ -400,5 +400,10 @@ iframe {
 
 	.right {
 		margin-left: 20%;
+	}
+
+	.lookAtMe {
+		padding: 12px 30px;
+		min-width: min-content;
 	}
 }
