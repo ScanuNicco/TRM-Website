@@ -251,14 +251,15 @@ iframe {
 }
 
 .lookAtMe {
-  font-size: 16pt;
-  padding: 12px 20px;
+  font-size: 20pt;
+  padding: 12px 60px;
   border: none;
   border-radius: 5px;
   box-shadow: 2px 2px 5px #0006;
   background: linear-gradient(#ff3131, #bb5d5d);
   color: white;
   transition: transform ease .2s;
+  font-size: bold;
 }
 
 .navButton {
