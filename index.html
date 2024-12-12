@@ -10,12 +10,12 @@
 </head>
 <body>
 {% include nav.html %}
-	<div style="overflow: hidden; position: relative; max-height: 56vw;" class="pageImage">
+	<div class="pageImage">
 	<video autoplay muted loop id="homeVideo">
 		<source src="home.mp4"></source>
 	</video>
 	<div style="z-index: 2; position: relative;">
-    <h1>Team Rose Motorsports</h1>
+    	<h1 id="homeWelcome">Welcome to Team Rose Motorsports</h1>
 	</div>
 	</div>
 	<h2>Who we are</h2>
@@ -39,8 +39,26 @@
 	#homeVideo {
 		position: absolute;
 		left: 0px;
-		width: 100vw;
 		z-index: 1;
+		min-height: 100%;
+  		min-width: 100vw;
+	}
+
+	.pageImage {
+		overflow: hidden;
+		position: relative;
+		height: 75vh;
+		max-height: unset;
+	}
+
+	#homeWelcome {
+		font-size: 46pt;
+	}
+
+	@media (max-width: 600px) {
+	  #homeWelcome {
+	    font-size: 28pt;
+	  }
 	}
 	</style>
 </body>
