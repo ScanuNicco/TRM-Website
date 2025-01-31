@@ -8,14 +8,14 @@
 <link rel="stylesheet" href="styles.css"></link>
 <link rel="icon" href="images/logo.svg"></link>
 </head>
-<body>
+<body onresize="pickVideo()">
 {% include nav.html %}
 	<div class="pageImage">
 	<video autoplay muted loop id="homeVideo">
-		<source src="home.mp4"></source>
 	</video>
 	<div style="z-index: 2; position: relative;">
-    	<h1 id="homeWelcome">Welcome to Team Rose Motorsports</h1>
+    	<h1 id="homeWelcome">We Are Team Rose Motorsports</h1>
+		<h3 style="color: white; margin: 0px;">The premier racing organization on campus.</h3>
 	</div>
 	</div>
 	<h2>Who we are</h2>
@@ -61,5 +61,18 @@
 	  }
 	}
 	</style>
+	<script>
+		var oldSize = 1920 - window.innerWidth; //Set the old size so that pickVideo triggers the first time
+		function pickVideo() {
+			if(window.innerWidth > 600 && oldSize <= 600) {
+				document.getElementById("homeVideo").src = "videos/home_desktop.webm";
+			} else if (window.innerWidth <= 600 && oldSize > 600) {
+				document.getElementById("homeVideo").src = "videos/home_mobile.webm";
+			} //If we are already showing the correct video, do nothing, so we don't restart it
+			oldSize = window.innerWidth;
+		}
+
+		pickVideo();
+	</script>
 </body>
 </html>
