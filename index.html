@@ -11,7 +11,7 @@
 <body onresize="pickVideo()">
 {% include nav.html %}
 	<div class="pageImage">
-	<video autoplay muted loop id="homeVideo">
+	<video autoplay muted loop playsinline id="homeVideo">
 	</video>
 	<div style="z-index: 2; position: relative;">
     	<h1 id="homeWelcome">We Are Team Rose Motorsports</h1>
@@ -20,7 +20,7 @@
 	</div>
 	<h2>Who we are</h2>
 	<p>Team Rose Motorsports provides an outlet for members to apply engineering skills learned in the classroom in a focused automotive environment. Hands-on automotive repair, design and fabrication experience through the maintenance and preparation of racecars is central to the team. Additionally, members can build their knowledge of automobiles and high-performance driving through operating these vehicles in sanctioned competitions in the surrounding area.</p><br>
-    <iframe src="https://youtube.com/embed/cVH2hmsgw9g" style="height: 35vh; width: 65vh; max-width: 90%;"></iframe><br>
+    <!--<iframe src="https://youtube.com/embed/cVH2hmsgw9g" style="height: 35vh; width: 65vh; max-width: 90%;"></iframe><br>-->
 	<button class="gotobutton bigLAM" onclick="location.href = 'about/team.html'">Learn More</button>
 
 	<h2>Consider Contributing to TRM</h2>
@@ -66,9 +66,9 @@
 		var oldSize = 1920 - window.innerWidth; //Set the old size so that pickVideo triggers the first time
 		function pickVideo() {
 			if(window.innerWidth > 600 && oldSize <= 600) {
-				document.getElementById("homeVideo").src = "videos/home_desktop.webm";
+				document.getElementById("homeVideo").src = "https://teamrosemotorsports.org/videos/home_desktop.webm";
 			} else if (window.innerWidth <= 600 && oldSize > 600) {
-				document.getElementById("homeVideo").src = "videos/home_mobile.webm";
+				document.getElementById("homeVideo").src = "https://teamrosemotorsports.org/videos/home_mobile.webm";
 			} //If we are already showing the correct video, do nothing, so we don't restart it
 			oldSize = window.innerWidth;
 		}
