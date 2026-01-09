@@ -407,3 +407,28 @@ iframe {
 		min-width: min-content;
 	}
 }
+
+.infoTable {
+	margin: auto;
+	border-collapse: collapse;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	background: #efefef;
+	border-radius: 15px;
+	overflow: hidden
+}
+
+.infoTable th {
+	background: var(--accent-color);
+	color: white;
+	padding: 10px 15px;
+}
+
+.infoTable td {
+	padding: 10px 15px;s
+}
+
+.infoTable tr:nth-child(even) {
+	/*background: #e4e4e4;*/
+	box-shadow: 0px 0px 20px #0001;
+}
